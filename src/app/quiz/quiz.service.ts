@@ -51,6 +51,7 @@ export class QuizService {
 
   createNewQuestion(): Question {
     return {
+      id: Date.now(), // Generate a unique ID
       text: '',
       options: ['', '', '', ''],
       correctAnswer: 0,

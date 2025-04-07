@@ -1,4 +1,5 @@
 export interface Question {
+  id?: number; // Add this
   text: string;
   options: string[];
   correctAnswer: number;

@@ -1,10 +1,57 @@
-<div class="container">
+<!-- <div class="container">
   <nav class="navbar navbar-expand-lg navbar-light bg-light mb-4">
     <div class="container-fluid">
       <a class="navbar-brand" routerLink="/">Quiz App</a>
       <div class="navbar-nav">
         <a class="nav-link" routerLink="/quizzes">Quizzes</a>
-        <a class="nav-link" routerLink="/create">Create</a>
+      </div>
+    </div>
+  </nav>
+
+  <router-outlet></router-outlet>
+</div> -->
+
+<div class="container">
+  <nav class="navbar navbar-expand-lg bg-white shadow-sm mb-4 rounded">
+    <div class="container-fluid">
+      <a class="navbar-brand fw-bold text-primary" routerLink="/">
+        <span class="d-inline-block align-middle me-2">
+          <svg width="24" height="24" class="text-primary">
+            <path
+              d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5"
+              fill="none"
+              stroke="currentColor"
+            />
+          </svg>
+        </span>
+        Quiz App
+      </a>
+
+      <!-- Toggle button for mobile -->
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarContent"
+        aria-controls="navbarContent"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <!-- Navigation items -->
+      <div
+        class="collapse navbar-collapse justify-content-end"
+        id="navbarContent"
+      >
+        <div class="navbar-nav gap-3">
+          <a
+            class="nav-link px-3 py-2 rounded-pill text-dark hover-bg-primary hover-text-white transition-colors"
+            routerLink="/quizzes"
+            >Quizzes</a
+          >
+        </div>
       </div>
     </div>
   </nav>
