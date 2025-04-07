@@ -1,1 +1,22 @@
-/* You can add global styles to this file, and also import other style files */
+body {
+  padding: 20px;
+  background-color: #f8f9fa;
+}
+
+.progress {
+  height: 30px;
+}
+
+.progress-bar {
+  line-height: 30px;
+}
+
+.card {
+  margin-bottom: 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.list-group-item.active {
+  background-color: #0d6efd;
+  border-color: #0d6efd;
+} /* You can add global styles to this file, and also import other style files */

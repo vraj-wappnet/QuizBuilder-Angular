@@ -1,0 +1,62 @@
+<div class="container mt-4" *ngIf="quiz">
+  <div class="card">
+    <div class="card-header bg-primary text-white">
+      <h2>Quiz Results: {{ quiz.title }}</h2>
+    </div>
+    <div class="card-body">
+      <div class="alert alert-info">
+        <h4 class="alert-heading">
+          Your Score: {{ score }} / {{ totalQuestions }}
+        </h4>
+        <p>{{ ((score / totalQuestions) * 100).toFixed(1) }}%</p>
+      </div>
+
+      <h4 class="mt-4">Question Review</h4>
+
+      <div *ngFor="let question of quiz.questions; let i = index" class="mb-4">
+        <div class="card">
+          <div
+            class="card-header"
+            [class.bg-success]="isCorrect(i)"
+            [class.bg-danger]="!isCorrect(i)"
+            [class.text-white]="true"
+          >
+            Question {{ i + 1 }}: {{ question.text }}
+          </div>
+          <div class="card-body">
+            <ul class="list-group">
+              <li
+                *ngFor="let option of question.options; let j = index"
+                class="list-group-item"
+                [class.list-group-item-success]="question.correctAnswer === j"
+                [class.list-group-item-danger]="
+                  !isCorrect(i) && userAnswers[i] === j
+                "
+              >
+                {{ option }}
+                <span
+                  *ngIf="question.correctAnswer === j"
+                  class="badge bg-success float-end"
+                  >Correct</span
+                >
+                <span
+                  *ngIf="!isCorrect(i) && userAnswers[i] === j"
+                  class="badge bg-danger float-end"
+                  >Your Answer</span
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="card-footer d-flex justify-content-between">
+      <button class="btn btn-primary" (click)="restartQuiz()">
+        Restart Quiz
+      </button>
+      <button class="btn btn-secondary" (click)="backToQuizzes()">
+        Back to Quiz List
+      </button>
+    </div>
+  </div>
+</div>
